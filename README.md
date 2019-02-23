@@ -2,6 +2,8 @@
 
 ![Build Status](https://travis-ci.org/seges/zemepan.svg?branch=master)
 
+[![Docker Container](http://dockeri.co/image/seges/zemepan)](https://registry.hub.docker.com/u/seges/zemepan/)
+
 Zemepán serves as your central registry for APIs and JSON schemas suitable for microservices and serverless functions. As JSON schema registry it can be used in combination of your favorite IDE or editor to validate any JSON you create. The API can refer to such schemas and either be deployed in the registry or reference parts of APIs stored in the registry.
 
 ## Start
