@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  dev:
+    image: seges/mug-frontend-javascript:8.9.1
+    expose:
+      - 60000
+    volumes:
+      - projects:/home/developer/projects
+      - npm-global:/home/developer/.npm-global
+      - ./.npmrc:/home/developer/.npmrc
+
+    command: tail -f /dev/null
+    user: "1000"
+    environment:
+      - USER=${USER}
+
+  zemepan:
+    build: .
+    image: seges/zemepan:1.0.0
+
+volumes:
+  projects:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD
+      o: bind
+  npm-global:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind,uid=1000
+      device: $PWD/npm-global
+  # faas-cli:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: $HOME/bin/faas-cli
+  #     o: bind
+  # faas-local-config:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: $HOME/.openfaas
+  #     o: bind

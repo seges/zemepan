@@ -1,0 +1,21 @@
+{
+  "name": "zemepan",
+  "version": "1.0.0",
+  "author": "Ladislav Gazo <gazo@seges.sk>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/seges/yeself#readme",
+  "scripts": {
+    "dev": "cross-env SSL=false http__port=50000 server__source_url=http://tramtaria.yeself.com:60000 nodemon"
+  },
+  "devDependencies": {
+    "cross-env": "5.2.0",
+    "nodemon": "1.18.10",
+    "run-p": "0.0.0"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "https": "1.0.0",
+    "swagger-ui-dist": "3.20.8"
+  }
+}
