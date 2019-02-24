@@ -41,9 +41,8 @@ const replaceAll = (target, search, replacement) => {
 };
 
 const replaceMiddleware = (dir) => (req, res) => {
-    const host = process.env.server__target_url || req.get('host');
     const protocol = process.env.SSL === true || process.env.SSL === 'true' ? 'https://' : 'http://';
-    const url = protocol + host;
+    const url = process.env.server__target_url ? process.env.server__target_url : (protocol + req.get('host'));
     const targetDir = rootDir + dir + req.url;
     console.log('in ' + targetDir + ' serving to url', url);
 
