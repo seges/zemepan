@@ -41,7 +41,7 @@ const replaceAll = (target, search, replacement) => {
 };
 
 const replaceMiddleware = (dir) => (req, res) => {
-    const host = process.env.target__url || req.get('host');
+    const host = process.env.server__target_url || req.get('host');
     const protocol = process.env.SSL === true || process.env.SSL === 'true' ? 'https://' : 'http://';
     const url = protocol + host;
     const targetDir = rootDir + dir + req.url;
