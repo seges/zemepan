@@ -12,10 +12,11 @@ Zemepán serves as your central registry for APIs and JSON schemas suitable for 
 
 ## Endpoints
 
-| Endpoint | Filesystem        | Description
-| -------- | ----------------- | ------------
-| `api`    | `root_dir/api`    | Holds OpenAPI schema definitions
-| `schema` | `root_dir/schema` | Holds JSON schema definitions
+| Endpoint           | Filesystem            | Description
+| ------------------ | --------------------- | ------------
+| `base_path`        | `root_dir/swagger_ui` | Serves Swagger UI
+| `base_path/api`    | `root_dir/api`        | Holds OpenAPI schema definitions
+| `base_path/schema` | `root_dir/schema`     | Holds JSON schema definitions
 
 
 ## Environment configuration
