@@ -10,6 +10,14 @@ Zemepán serves as your central registry for APIs and JSON schemas suitable for 
 
 `docker run -v ./api:/opt/zemepan/api -v ./schema:/opt/zemepan/schema seges/zemepan:1.0.0`
 
+## Endpoints
+
+| Endpoint | Filesystem        | Description
+| -------- | ----------------- | ------------
+| `api`    | `root_dir/api`    | Holds OpenAPI schema definitions
+| `schema` | `root_dir/schema` | Holds JSON schema definitions
+
+
 ## Environment configuration
 
 | Variable                     | Default value      | Description
@@ -19,7 +27,8 @@ Zemepán serves as your central registry for APIs and JSON schemas suitable for 
 | http__port                   | 60000              |
 | http__ssl__key_file          | $(cwd)/ca/key.pem  |
 | http__ssl__cert_file         | $(cwd)/ca/cert.pem |
-| server__root_dir             | <empty>            |
+| server__root_dir             | <empty>            | Defines directory where JSON files being served are stored on the filesystem. It should contain trailing slash.
+| server__base_path            | /                  | Server publishes 'api' and 'schema' endpoints from the base path. It starts with leading slash usually.
 | server__source_url           |                    |
 | server__target_url           | 'host' header      |
 
@@ -38,6 +47,12 @@ prefix=/home/developer/.npm-global
 
 `docker-compose up -d dev`
 `docker-compose exec dev zsh`
+
+### Testing
+
+`npm run dev`
+
+* access test API: http://my-workstation:50000/registry/?url=api/emptyApi.json
 
 ### Publish
 

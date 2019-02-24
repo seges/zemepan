@@ -3,6 +3,8 @@ version: '3.4'
 services:
   dev:
     image: seges/mug-frontend-javascript:8.9.1
+    ports:
+      - 50000:60000
     expose:
       - 60000
     volumes:
@@ -17,7 +19,7 @@ services:
 
   zemepan:
     build: .
-    image: seges/zemepan:1.0.0
+    image: seges/zemepan:1.0.1
 
 volumes:
   projects:

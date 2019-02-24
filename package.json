@@ -5,7 +5,7 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/seges/yeself#readme",
   "scripts": {
-    "dev": "cross-env SSL=false http__port=50000 server__source_url=http://tramtaria.yeself.com:60000 nodemon"
+    "dev": "cross-env SSL=false http__port=50000 server__root_dir=__tests__/ server__base_path=/registry server__source_url=http://tramtaria.yeself.com:60000 nodemon"
   },
   "devDependencies": {
     "cross-env": "5.2.0",
