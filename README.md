@@ -8,7 +8,7 @@ Zemepán serves as your central registry for APIs and JSON schemas suitable for 
 
 ## Start
 
-`docker run -v ./api:/opt/zemepan/api -v ./schema:/opt/zemepan/schema seges/zemepan:1.0.3`
+`docker run -v ./api:/opt/zemepan/api -v ./schema:/opt/zemepan/schema seges/zemepan:1.0.4`
 
 ## Endpoints
 
