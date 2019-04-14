@@ -19,7 +19,7 @@ services:
 
   zemepan:
     build: .
-    image: seges/zemepan:1.0.3
+    image: seges/zemepan:1.0.4
 
 volumes:
   projects:
