@@ -9,7 +9,7 @@ const pathToSwaggerUi = require('swagger-ui-dist').absolutePath();
  */
 
 const rootDir = process.env.server__root_dir || '';
-const basePath = process.env.server__base_path || '/';
+const basePath = process.env.server__base_path || '';
 const sourceUrl = process.env.server__source_url;
 const port = process.env.http__port || 60000;
 
@@ -27,7 +27,7 @@ console.log('HTTP port', port);
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(basePath, express.static(pathToSwaggerUi));
+app.use(basePath + '/', express.static(pathToSwaggerUi));
 app.disable('x-powered-by');
 app.disable('etag');
 
